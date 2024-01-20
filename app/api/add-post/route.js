@@ -6,7 +6,7 @@ export async function POST(request) {
   const { title, content } = res;
 
   const result = await prisma.post.create({
-    data: { title, content },
+    data: { title, content, published: true },
   });
   return NextResponse.json({ result });
 }
